@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import backgroundImage from '../assets/among-us.jpg';
+// import { GoogleLogin } from '@react-oauth/google';
 
 const SignIn = () => {
   const [username, setUsername] = useState('');
@@ -31,12 +32,19 @@ const SignIn = () => {
     }
   };
 
+  // const handleGoogleSuccess = (credentialResponse) => {
+  //   console.log(credentialResponse);
+  //   // Add further logic for handling the Google login response.
+  //   navigate(`/dashboard`);
+  // };
+
+  // const handleGoogleError = () => {
+  //   console.log('Google Login Failed');
+  //   alert('Google login failed. Please try again.');
+  // };
+
   return (
-    <div className="bg-cover bg-center min-h-screen flex items-center justify-center px-8 py-8" style={{ backgroundImage: `url(${backgroundImage})`,  backgroundSize: 'cover',
-    backgroundAttachment: 'fixed',
-    height: '100vh',
-    width: '100vw',
-    overflow: 'hidden' }}>
+    <div className="bg-cover bg-center min-h-screen flex items-center justify-center px-8 py-8" style={{ backgroundImage: `url(${backgroundImage})`,  backgroundSize: 'cover', backgroundAttachment: 'fixed', height: '100vh', width: '100vw', overflow: 'hidden' }}>
       <section>
         <div className="flex items-center justify-center min-h-screen px-8 py-8 mx-auto">
           <div className="w-full bg-white rounded-lg shadow dark:border sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -82,6 +90,14 @@ const SignIn = () => {
                   Don't have an account yet? <a href="/form" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
                 </p>
               </form>
+
+              {/* Google OAuth Login Button */}
+              {/* <div className="mt-4">
+                <GoogleLogin
+                  onSuccess={handleGoogleSuccess}
+                  onError={handleGoogleError}
+                />
+              </div> */}
             </div>
           </div>
         </div>
